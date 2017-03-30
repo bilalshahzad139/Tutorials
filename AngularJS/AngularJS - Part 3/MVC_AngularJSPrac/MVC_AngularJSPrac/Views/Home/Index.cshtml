@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html ng-app="SocialModule">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <script src='@Url.Content("~/Scripts/ang/angular.min.js")' type="text/javascript"></script>
+    <script src='@Url.Content("~/Scripts/ang/app.js")' type="text/javascript"></script>
+    <script src='@Url.Content("~/Scripts/ang/SocialService.js")' type="text/javascript"></script>
+    <script src='@Url.Content("~/Scripts/ang/HomeCtrl.js")' type="text/javascript"></script>
+
+</head>
+<body ng-controller="HomeCtrl">
+    <h1>{{message}}</h1>
+
+    <div>
+        Login:
+        <input type="text" ng-model="user.UserName" />
+        <br> Password:
+        <input type="password" ng-model="user.Password" />
+        <br>
+        <input type="button" value="Login" ng-click="verify()" />
+        <span style="color:red" ng-show="showerrormsg">Invalid Login details</span>
+    </div>
+
+    <input type="submit" ng-click="getPosts()" value="Get Posts" />
+    <div>
+        <h1>Posts</h1>
+        <div ng-repeat="p in posts">
+            <img ng-src='@Url.Content("~/images/{{p.PicURL}}")' height="25px" width="25px" />
+            <span>{{p.Title}}</span>
+            <a href="#" ng-click="deleteMe(this);">X</a>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+
+<html ng-app="FirstModule">
+<head>
+    <title>AngularJS Prac</title>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script>
+        var app = angular.module("FirstModule", []);
+        app.controller("FirstController", function ($scope) {
+            $scope.name = "Bilal";
+            $scope.cities = [
+                { cid: 1, name: 'Lahore' },
+                { cid: 2, name: 'Karachi' },
+                { cid: 3, name: 'ISB' }];
+            $scope.selectedItem = "1";
+
+            $scope.add = function () {
+                $scope.cities.push({ cid: 4, name: 'Faislabad' });
+            }
+        })
+    </script>
+</head>
+<body>
+    <div ng-controller="FirstController">
+        <input type="text" ng-model="name" /><h1>{{name}}</h1>
+        <br />
+        <select ng-model="selectedItem">
+            <option ng-repeat="c in cities" value="{{c.cid}}">{{c.name}}</option>
+        </select>
+        <span>{{selectedItem}}</span>
+
+        <input type="submit" ng-click="add();" value="OK" />
+    </div>
+</body>
+</html>
+
+
