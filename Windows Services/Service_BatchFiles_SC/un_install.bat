@@ -1,0 +1,3 @@
+
+sc delete OVPNService
+pause
