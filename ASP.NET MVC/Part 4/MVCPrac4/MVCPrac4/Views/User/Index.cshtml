@@ -1,0 +1,37 @@
+﻿
+
+@section scripts{
+ <script type="text/javascript" src="/scripts/LoginManager.js">
+ </script>   
+
+}
+
+<span>Example of using Url class</span>
+@{
+    String s = Url.Content("~/scripts/LoginManager.js");
+    <div>@s</div>
+}
+
+<h1>Login Partial View by Providing View Name</h1>
+@{
+    Html.RenderPartial("LoginPartial");
+}
+
+<h1>Login Partial View by Providing Action Name</h1>
+@{
+    Html.RenderAction("Login");
+}
+
+
+<h1>
+    Pakistan Zindbad!
+</h1>
+
+
+@section header{
+    <h2>Menu</h2>
+}
+
+@section footer{
+    copyright
+}

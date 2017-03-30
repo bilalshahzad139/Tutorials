@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_MyLayout</title>
+
+    @RenderSection("scripts", false)
+    
+</head>
+<body>
+    <a href="@Url.Content("~/User/Register")">Register</a>
+
+    <a href="@Url.Content("~/User/Register2")">Register2</a>
+
+    <div>
+        @RenderSection("header",false)
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    <div>
+        @RenderSection("footer", false)
+    </div>
+</body>
+</html>

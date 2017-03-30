@@ -1,0 +1,16 @@
+﻿
+@model MVCPrac1.Models.UserDTO
+
+<h2>Register</h2>
+
+<form action="/User/Register2" method="post">
+    Name:
+    <input type="text" id="name" name="name" value="@Model.Name" /> <br />
+    Login:
+    <input type="text" id="login" name="login" value="@Model.Login" /> <br />
+    Password:
+    <input type="password" id="password" name="password" value="@Model.Password" /> <br />
+    <input type="submit" value="Register" />
+    <span style="color:red">@ViewBag.Message</span>
+</form>
+
